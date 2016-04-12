@@ -2,14 +2,7 @@
 
 ## Purpose
 
-<<<<<<< 030668af3f256e25592b827c3e4425dec28ddd09
 This repository provides a set of generic roles and reusable playbooks for deploying JBoss Middleware and associated CI / CD tooling. 
-
-## Relevant Links
-
-[Ansible roles](http://docs.ansible.com/ansible/playbooks_roles.html/ "Ansible Roles") 
-=======
-This repository provides a set of generic roles and reusable playbooks for deploying JBoss Middleware and associated CI / CD tooling.
 
 ## Getting Started
 
@@ -35,4 +28,3 @@ We're following the [OpenShift Ansible Best Practices](https://github.com/opensh
 ## Relevant Links
 
 [Ansible roles](http://docs.ansible.com/ansible/playbooks_roles.html/ "Ansible Roles")
->>>>>>> # This is a combination of 3 commits.
