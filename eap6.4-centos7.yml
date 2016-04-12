@@ -1,0 +1,23 @@
+- hosts: jboss_eap_hosts
+  remote_user: "{{ ansible_user }}"
+  sudo: true
+  gather_facts: true
+
+  vars_prompt:
+    - name: "rhn_username"
+      prompt: "Enter Your Red Hat Customer Portal Username"
+      private: no
+
+    - name: "rhn_password"
+      prompt: "Enter Your Red Hat Customer Portal Password"
+      private: yes
+
+  pre_tasks:
+  - name: Install Java
+    action: "{{ ansible_pkg_mgr }} name={{ eap_java_pkg_name }} state=latest"
+
+  - name: Install Unzip
+    action: "{{ ansible_pkg_mgr }} name=unzip state=latest"
+
+  roles:
+  - role: jboss_eap
