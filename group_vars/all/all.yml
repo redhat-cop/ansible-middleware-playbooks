@@ -1,0 +1,6 @@
+---
+ansible_user: vagrant
+
+# Java 8 recommended
+# Full JDK (not just JRE) recommended. See https://access.redhat.com/solutions/18259
+eap_java_pkg_name: java-1.8.0-openjdk-devel
