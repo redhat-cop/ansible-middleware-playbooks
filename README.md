@@ -27,4 +27,4 @@ We're following the [OpenShift Ansible Best Practices](https://github.com/opensh
 
 ## Relevant Links
 
-[Ansible roles](http://docs.ansible.com/ansible/playbooks_roles.html/ "Ansible Roles")
+[Ansible roles](http://docs.ansible.com/ansible/playbooks_roles.html "Ansible Roles")
