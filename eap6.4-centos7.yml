@@ -15,9 +15,13 @@
   pre_tasks:
   - name: Install Java
     action: "{{ ansible_pkg_mgr }} name={{ eap_java_pkg_name }} state=latest"
+    tags:
+    - jboss_eap
 
   - name: Install Unzip
     action: "{{ ansible_pkg_mgr }} name=unzip state=latest"
+    tags:
+    - jboss_eap
 
   roles:
   - role: jboss_eap
