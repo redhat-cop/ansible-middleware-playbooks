@@ -23,5 +23,13 @@
     tags:
     - jboss_eap
 
+  - name: Install Python Dependencies
+    action: "pip name={{item}} state=present"
+    with_items:
+       - requests
+       - lxml
+    tags:
+    - jboss_eap
+
   roles:
   - role: jboss_eap
