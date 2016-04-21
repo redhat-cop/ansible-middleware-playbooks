@@ -1,3 +1,5 @@
-[jboss_eap_hosts]
-localhost:2200
+[jboss_eap_centos_hosts]
+209.132.178.208
 
+[jboss_eap_rhel_hosts]
+10.3.11.187

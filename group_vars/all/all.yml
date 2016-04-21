@@ -1,5 +1,7 @@
 ---
-ansible_user: vagrant
+ansible_centos_user: centos
+
+ansible_rhel_user: cloud-user
 
 # Java 8 recommended
 # Full JDK (not just JRE) recommended. See https://access.redhat.com/solutions/18259

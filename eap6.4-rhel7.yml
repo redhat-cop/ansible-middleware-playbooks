@@ -1,5 +1,5 @@
-- hosts: jboss_eap_centos_hosts
-  remote_user: "{{ ansible_centos_user }}"
+- hosts: jboss_eap_rhel_hosts
+  remote_user: "{{ ansible_rhel_user }}"
   sudo: true
   gather_facts: true
 
@@ -13,6 +13,15 @@
       private: yes
 
   pre_tasks:
+  - name: Subscribe the host
+    redhat_subscription:
+      state: present
+      username: "{{ rhn_username }}"
+      password: "{{ rhn_password }}"
+      autosubscribe: true
+    tags:
+    - jboss_eap
+
   - name: Install Java
     action: "{{ ansible_pkg_mgr }} name={{ eap_java_pkg_name }} state=latest"
     tags:
@@ -23,8 +32,25 @@
     tags:
     - jboss_eap
 
+  - name: Enable Optional Repo
+    command: "subscription-manager repos --enable rhel-7-server-optional-rpms"
+    tags:
+    - jboss_eap
+
+  - name: Enable Extras Repo
+    command: "subscription-manager repos --enable rhel-7-server-extras-rpms"
+    tags:
+    - jboss_eap
+
+  - name: Download EPEL
+    get_url:
+      url: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+      dest: "/tmp"
+    tags:
+    - jboss_eap
+
   - name: Install EPEL
-    action: "{{ ansible_pkg_mgr }} name=epel-release state=latest"
+    action: "{{ ansible_pkg_mgr }} name=/tmp/epel-release-latest-7.noarch.rpm state=present"
     tags:
     - jboss_eap
 
