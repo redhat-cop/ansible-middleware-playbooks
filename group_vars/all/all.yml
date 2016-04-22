@@ -1,5 +1,5 @@
 ---
-ansible_centos_user: centos
+ansible_centos_user: vagrant
 
 ansible_rhel_user: cloud-user
 

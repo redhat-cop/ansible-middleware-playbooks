@@ -1,0 +1,72 @@
+---
+- name: Subscribe the host
+  redhat_subscription:
+    state: present
+    username: "{{ rhn_username }}"
+    password: "{{ rhn_password }}"
+    autosubscribe: true
+  tags:
+  - jboss_eap
+  when: ansible_distribution == 'RedHat'
+
+- name: Install Java
+  action: "{{ ansible_pkg_mgr }} name={{ eap_java_pkg_name }} state=latest"
+  tags:
+  - common
+
+- name: Install Unzip
+  action: "{{ ansible_pkg_mgr }} name=unzip state=latest"
+  tags:
+  - common
+
+- name: Install EPEL for CentOS
+  action: "{{ ansible_pkg_mgr }} name=epel-release state=latest"
+  tags:
+  - common
+  when: ansible_distribution == 'CentOS'
+
+- name: Enable Optional Repo for RHEL
+  command: "subscription-manager repos --enable rhel-7-server-optional-rpms"
+  tags:
+  - common
+  when: ansible_distribution == 'RedHat'
+
+- name: Enable Extras Repo for RHEL
+  command: "subscription-manager repos --enable rhel-7-server-extras-rpms"
+  tags:
+  - common
+  when: ansible_distribution == 'RedHat'
+
+- name: Download EPEL for RHEL
+  get_url:
+    url: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+    dest: "/tmp"
+  tags:
+  - common
+  when: ansible_distribution == 'RedHat'
+
+- name: Install EPEL for RHEL
+  action: "{{ ansible_pkg_mgr }} name=/tmp/epel-release-latest-7.noarch.rpm state=present"
+  tags:
+  - common
+  when: ansible_distribution == 'RedHat'
+
+- name: Install PIP
+  action: "{{ ansible_pkg_mgr }} name=python-pip state=latest"
+  tags:
+  - common
+
+- name: Install Python Dependencies
+  pip:
+    name: "{{item}}"
+    state: present
+  with_items:
+   - requests
+   - lxml
+  tags:
+  - common
+
+- name: Remove EPEL Package
+  action: "{{ ansible_pkg_mgr }} name='epel*' state=absent"
+  tags:
+  - common
