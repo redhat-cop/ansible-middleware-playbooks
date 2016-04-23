@@ -6,3 +6,6 @@ ansible_rhel_user: cloud-user
 # Java 8 recommended
 # Full JDK (not just JRE) recommended. See https://access.redhat.com/solutions/18259
 eap_java_pkg_name: java-1.8.0-openjdk-devel
+
+# Override the default method. See the role README.md
+# download_method: csp-to-host | copy-from-client | file-server-to-host
