@@ -18,7 +18,7 @@ These playbooks download all binaries from the [Red Hat Customer Portal](https:/
 ## Roles Used By These Playbooks
 
 1. [JBoss EAP](https://github.com/rhtconsulting/jboss_eap)
-2. TODO: BxMS
+2. [JBoss EAP](https://github.com/rhtconsulting/jboss_bxms)
 
 ## Best Practices
 

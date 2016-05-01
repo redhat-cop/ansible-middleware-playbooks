@@ -23,19 +23,19 @@
   action: "{{ ansible_pkg_mgr }} name=epel-release state=latest"
   tags:
   - common
-  when: ansible_distribution == 'CentOS'
+  when: transfer_method == 'csp-to-host' and ansible_distribution == 'CentOS'
 
 - name: Enable Optional Repo for RHEL
   command: "subscription-manager repos --enable rhel-7-server-optional-rpms"
   tags:
   - common
-  when: ansible_distribution == 'RedHat'
+  when: transfer_method == 'csp-to-host' and ansible_distribution == 'RedHat'
 
 - name: Enable Extras Repo for RHEL
   command: "subscription-manager repos --enable rhel-7-server-extras-rpms"
   tags:
   - common
-  when: ansible_distribution == 'RedHat'
+  when: transfer_method == 'csp-to-host' and ansible_distribution == 'RedHat'
 
 - name: Download EPEL for RHEL
   get_url:
@@ -43,18 +43,19 @@
     dest: "/tmp"
   tags:
   - common
-  when: ansible_distribution == 'RedHat'
+  when: transfer_method == 'csp-to-host' and ansible_distribution == 'RedHat'
 
 - name: Install EPEL for RHEL
   action: "{{ ansible_pkg_mgr }} name=/tmp/epel-release-latest-7.noarch.rpm state=present"
   tags:
   - common
-  when: ansible_distribution == 'RedHat'
+  when: transfer_method == 'csp-to-host' and ansible_distribution == 'RedHat'
 
 - name: Install PIP
   action: "{{ ansible_pkg_mgr }} name=python-pip state=latest"
   tags:
   - common
+  when: transfer_method == 'csp-to-host'
 
 - name: Install Python Dependencies
   pip:
@@ -65,8 +66,10 @@
    - lxml
   tags:
   - common
+  when: transfer_method == 'csp-to-host'
 
 - name: Remove EPEL Package
   action: "{{ ansible_pkg_mgr }} name='epel*' state=absent"
   tags:
   - common
+  when: transfer_method == 'csp-to-host'
