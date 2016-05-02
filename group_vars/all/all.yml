@@ -9,4 +9,4 @@ ansible_rhel_user: cloud-user
 eap_java_pkg_name: java-1.8.0-openjdk-devel
 
 # Override the default method. See https://github.com/rhtconsulting/jboss_eap/blob/master/README.md
-transfer_method: copy-from-controller  #csp-to-host | copy-from-controller | file-server-to-host
+transfer_method: csp-to-host  #csp-to-host | copy-from-controller | file-server-to-host
