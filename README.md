@@ -33,7 +33,7 @@ These playbooks require binaries from the [Red Hat Customer Portal](https://acce
 ## Roles Used By These Playbooks
 
 1. [JBoss EAP](https://github.com/rhtconsulting/jboss_eap)
-2. [JBoss EAP](https://github.com/rhtconsulting/jboss_bxms)
+2. [JBoss BxMS](https://github.com/rhtconsulting/jboss_bxms)
 
 ## Best Practices
 
