@@ -11,9 +11,22 @@ This repository provides a set of generic roles and reusable playbooks for deplo
 3. Clone the [JBoss EAP Role](https://github.com/rhtconsulting/jboss_eap) into your [Ansible Roles Path](http://docs.ansible.com/ansible/intro_configuration.html#roles-path). Future version will support galaxy to make this easier.
 4. TODO: ansible-galaxy install
 
+Transfer Methods
+----------
+
+These playbooks and their required roles support a few different mechanisms for transferring the product zip files to the target host.
+
+### csp-to-host
+This method uses the [custom redhat_csp_download module](https://github.com/rhtconsulting/ansible-middleware-playbooks/blob/master/library/redhat_csp_download.py) to download the product binaries from the [Red Hat Customer Portal](https://access.redhat.com/downloads/). This requires network access from the target host to the Red Hat Customer Portal, but has the advantage of being fully automated. Each of the roles have sensible defaults already set.
+
+The following variables are required:
+- `rhn_username`
+- `rhn_password`
+
+
 ## Red Hat Subscriptions
 
-These playbooks download all binaries from the [Red Hat Customer Portal](https://access.redhat.com/downloads/), so you'll need a valid subscription. Developers can get a $0 subscition through the [Red Hat Developer Program](http://developers.redhat.com/products/eap/download/).
+These playbooks require binaries from the [Red Hat Customer Portal](https://access.redhat.com/downloads/), so you'll need a valid subscription. Developers can get a $0 subscription through the [Red Hat Developer Program](http://developers.redhat.com/products/eap/download/).
 
 ## Roles Used By These Playbooks
 
