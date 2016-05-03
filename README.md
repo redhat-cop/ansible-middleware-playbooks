@@ -8,8 +8,7 @@ This repository provides a set of generic roles and reusable playbooks for deplo
 
 1. Update group_vars/all/all.yml to reflect your environment
 2. Update inventory.yml to reflect your environment
-3. Clone the [JBoss EAP Role](https://github.com/rhtconsulting/jboss_eap) into your [Ansible Roles Path](http://docs.ansible.com/ansible/intro_configuration.html#roles-path). Future version will support galaxy to make this easier.
-4. TODO: ansible-galaxy install
+3. Run `ansible-galaxy install -r requirements.yml -p ./roles` or clone the [JBoss EAP Role](https://github.com/rhtconsulting/jboss_eap) into your [Ansible Roles Path](http://docs.ansible.com/ansible/intro_configuration.html#roles-path). Future version will support galaxy to make this easier.
 
 Transfer Methods
 ----------
