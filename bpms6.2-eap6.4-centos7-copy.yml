@@ -1,0 +1,12 @@
+- hosts: jboss_bxms_eap_centos_hosts
+  remote_user: "{{ ansible_centos_user }}"
+  sudo: true
+  gather_facts: true
+
+  vars:
+    transfer_method: copy-from-controller
+
+  roles:
+  - common
+  - jboss_eap
+  - jboss_bxms
