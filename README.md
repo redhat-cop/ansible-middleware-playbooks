@@ -1,4 +1,4 @@
-# ansible-middleware-playbooks
+# ansible-middleware-playbooks [![Build Status](https://travis-ci.org/rhtconsulting/ansible-middleware-playbooks.svg)](https://travis-ci.org/rhtconsulting/ansible-middleware-playbooks)
 
 ## Purpose
 
