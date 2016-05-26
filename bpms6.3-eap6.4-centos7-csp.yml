@@ -16,6 +16,6 @@
     private: yes
 
   roles:
-  - common
+  - jboss_common
   - jboss_eap
   - jboss_bxms

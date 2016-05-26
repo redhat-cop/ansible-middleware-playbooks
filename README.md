@@ -31,6 +31,8 @@ The following variables are required:
 ### copy-from-controller
 This method requires you to download the product binaries from the [Red Hat Customer Portal](https://access.redhat.com/downloads/) and then add them to the files directory. This has the benefit of supporting installs when the target host does have public internet connectivity, but requires a manual step before the playbook can be run. Each of the roles have sensible defaults already set, and the .gitignore will ignore .zip files.
 
+The easiest way to provide the files to your role is to symlink them to the role_name/files directory. If you files are not named the same as the files on the customer portal, you can override the file name using the `*_artifact_name` variables.
+
 ## Red Hat Subscriptions
 
 These playbooks require binaries from the [Red Hat Customer Portal](https://access.redhat.com/downloads/), so you'll need a valid subscription. Developers can get a $0 subscription through the [Red Hat Developer Program](http://developers.redhat.com/products/eap/download/).

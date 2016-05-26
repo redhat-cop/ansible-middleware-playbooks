@@ -7,6 +7,6 @@
     transfer_method: copy-from-controller
 
   roles:
-  - common
+  - jboss_common
   - jboss_eap
   - jboss_bxms
