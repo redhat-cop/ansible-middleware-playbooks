@@ -1,4 +1,4 @@
-- hosts: jboss_eap_rhel_hosts
+- hosts: jboss_fuse_rhel_hosts
   remote_user: "{{ ansible_rhel_user }}"
   sudo: true
   gather_facts: true
