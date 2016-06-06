@@ -1,0 +1,17 @@
+- hosts: jboss_eap_centos_hosts
+  remote_user: "{{ ansible_centos_user }}"
+  sudo: true
+  gather_facts: true
+
+  vars_prompt:
+  - name: "rhn_username"
+    prompt: "Enter Your Red Hat Customer Portal Username"
+    private: no
+
+  - name: "rhn_password"
+    prompt: "Enter Your Red Hat Customer Portal Password"
+    private: yes
+
+  roles:
+  - jboss_common
+  - jboss_fuse
