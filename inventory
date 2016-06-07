@@ -1,8 +1,8 @@
 [jboss_eap_centos_hosts]
-localhost:2200
-
-[jboss_eap_centos_hosts:vars]
-ansible_centos_user=vagrant
+localhost1 ansible_ssh_host=localhost  ansible_ssh_port=2200 ansible_centos_user=vagrant
 
 [jboss_eap_rhel_hosts]
 10.3.8.173
+
+[jboss_bxms_eap_centos_hosts]
+localhost2 ansible_ssh_host=localhost ansible_ssh_port=2202 ansible_centos_user=vagrant
