@@ -1,0 +1,11 @@
+- hosts: jboss_fuse_centos_hosts
+  remote_user: "{{ ansible_centos_user }}"
+  sudo: true
+  gather_facts: true
+
+  vars:
+    transfer_method: copy-from-controller
+
+  roles:
+  - jboss_common
+  - jboss_fuse
