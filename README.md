@@ -18,7 +18,7 @@ This repository provides a set of generic roles and reusable playbooks for deplo
 4. [JBoss Fuse](https://github.com/rhtconsulting/jboss_fuse)
 
 ## Ansible Install and Version
-We are currently working against ansible 2.0.2.0 until [bugs in 2.1.0.0 are resolved](https://github.com/ansible/ansible/issues/16060). `pip` is the preferred installed method for now: `pip install ansible==2.0.2.0`
+We are currently working against ansible 2.1.1.0. `pip` is the preferred installed method for now: `pip install ansible==2.1.1.0`
 
 ## Transfer Methods
 
