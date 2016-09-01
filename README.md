@@ -8,7 +8,7 @@ This repository provides a set of generic roles and reusable playbooks for deplo
 
 1. Update group_vars/all/all.yml to reflect your environment
 2. Update inventory.yml to reflect your environment
-3. Run `ansible-galaxy install -r requirements.yml -p ./roles` to download required roles from galaxy.
+3. Run `ansible-galaxy install -r roles/requirements.yml -p ./roles` to download required roles from galaxy.
 
 ## Roles Used By These Playbooks
 
