@@ -1,0 +1,25 @@
+- hosts: jboss_amq_rhel_hosts
+  remote_user: "{{ ansible_rhel_user }}"
+  become: yes
+  gather_facts: true
+
+# Set capabilities to install
+  vars:
+    role_install_broker: true
+    role_install_interconnect: false
+
+  vars_prompt:
+  - name: "rhn_username"
+    prompt: "Enter Your Red Hat Customer Portal Username"
+    private: no
+
+  - name: "rhn_password"
+    prompt: "Enter Your Red Hat Customer Portal Password"
+    private: yes
+
+  roles:
+  - role: jboss_common
+    install_java: "{{ role_install_broker }}"
+  - role: jboss_amq
+    install_broker: "{{ role_install_broker }}"
+    install_interconnect: "{{ role_install_interconnect }}"
