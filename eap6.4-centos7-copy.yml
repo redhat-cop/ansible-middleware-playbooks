@@ -1,11 +1,11 @@
 - hosts: jboss_eap_centos_hosts
-  remote_user: "{{ ansible_centos_user }}"
-  sudo: true
+  become_user: "{{ ansible_centos_user }}"
+  become: true
   gather_facts: true
 
   vars:
     transfer_method: copy-from-controller
 
   roles:
-  - jboss_common
-  - jboss_eap
+  - redhat-cop.jboss_common
+  - redhat-cop.jboss_eap

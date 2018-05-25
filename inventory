@@ -1,8 +1,15 @@
-[jboss_eap_centos_hosts]
-localhost1 ansible_ssh_host=localhost  ansible_ssh_port=2200 ansible_centos_user=vagrant
-
 [jboss_eap_rhel_hosts]
-10.3.8.173
+# Example Host
+#10.1.4.2 ansible_rhel_user=root ansible_user=cloud-user rh_poolid=<ID>
+
+[jboss_eap_centos_hosts]
+
+[jboss_amq_rhel_hosts]
+
+[jboss_fuse_rhel_hosts]
+
+[jboss_fuse_centos_hosts]
 
 [jboss_bxms_eap_centos_hosts]
-localhost2 ansible_ssh_host=localhost ansible_ssh_port=2202 ansible_centos_user=vagrant
+
+[jboss_datagrid_rhel_hosts]

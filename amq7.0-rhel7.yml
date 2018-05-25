@@ -1,6 +1,6 @@
 - hosts: jboss_amq_rhel_hosts
-  remote_user: "{{ ansible_rhel_user }}"
-  become: yes
+  become_user: "{{ ansible_rhel_user }}"
+  become: true
   gather_facts: true
 
 # Set capabilities to install
@@ -18,8 +18,8 @@
     private: yes
 
   roles:
-  - role: jboss_common
+  - role: redhat-cop.jboss_common
     install_java: "{{ role_install_broker }}"
-  - role: jboss_amq
+  - role: redhat-cop.jboss_amq
     install_broker: "{{ role_install_broker }}"
     install_interconnect: "{{ role_install_interconnect }}"

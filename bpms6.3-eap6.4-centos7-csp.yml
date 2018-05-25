@@ -1,6 +1,6 @@
 - hosts: jboss_bxms_eap_centos_hosts
-  remote_user: "{{ ansible_centos_user }}"
-  sudo: true
+  become_user: "{{ ansible_centos_user }}"
+  become: true
   gather_facts: true
 
   vars:
@@ -16,6 +16,6 @@
     private: yes
 
   roles:
-  - jboss_common
-  - jboss_eap
-  - jboss_bxms
+  - redhat-cop.jboss_common
+  - redhat-cop.jboss_eap
+  - redhat-cop.jboss_bxms
