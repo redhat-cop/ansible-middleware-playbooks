@@ -1,14 +1,17 @@
-- src: rhtconsulting.jboss_eap
-  name: jboss_eap
+- src: redhat-cop.jboss_eap
+  name: redhat-cop.jboss_eap
 
-- src: rhtconsulting.jboss_common
-  name: jboss_common
+- src: redhat-cop.jboss-common
+  name: redhat-cop.jboss_common
+
+- src: redhat-cop.jboss_bxms
+  name: redhat-cop.jboss_bxms
+
+- src: redhat-cop.jboss_fuse
+  name: redhat-cop.jboss_fuse
+
+- src: redhat-cop.jboss_fuse
+  name: redhat-cop.jboss_amq
 
 - src: sabre1041.redhat-csp-download
-  name: redhat-csp-download
-
-- src: rhtconsulting.jboss_bxms
-  name: jboss_bxms
-
-#- src: rhtconsulting.jboss_fuse
-#  name: jboss_fuse
+  name: sabre1041.redhat-csp-download
