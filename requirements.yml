@@ -10,7 +10,7 @@
 - src: redhat-cop.jboss_fuse
   name: redhat-cop.jboss_fuse
 
-- src: redhat-cop.jboss_fuse
+- src: redhat-cop.jboss_amq
   name: redhat-cop.jboss_amq
 
 - src: sabre1041.redhat-csp-download

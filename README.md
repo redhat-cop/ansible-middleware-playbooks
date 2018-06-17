@@ -17,7 +17,7 @@ This repository provides a set of generic roles and reusable playbooks for deplo
 3. [JBoss BxMS](https://github.com/redhat-cop/jboss_bxms)
 4. [JBoss Fuse](https://github.com/redhat-cop/jboss_fuse)
 5. [JBoss AMQ](https://github.com/redhat-cop/jboss_amq)
-6. [JBoss AMQ](https://github.com/redhat-cop/jboss_datagrid)
+6. [JBoss Datagrid](https://github.com/redhat-cop/jboss_datagrid)
 
 ## Ansible Install and Version
 We are currently working against ansible 2.1.1.0. `pip` is the preferred installed method for now: `pip install ansible==2.1.1.0`
