@@ -1,3 +1,5 @@
+---
+
 - src: redhat-cop.jboss_eap
   name: redhat-cop.jboss_eap
 
@@ -12,6 +14,9 @@
 
 - src: redhat-cop.jboss_amq
   name: redhat-cop.jboss_amq
+
+- src: redhat-cop.jboss_datagrid
+  name: redhat-cop.jboss_datagrid
 
 - src: sabre1041.redhat-csp-download
   name: sabre1041.redhat-csp-download

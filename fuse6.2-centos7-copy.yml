@@ -1,3 +1,5 @@
+---
+
 - hosts: jboss_fuse_centos_hosts
   become_user: "{{ ansible_centos_user }}"
   become: true
@@ -7,5 +9,5 @@
     transfer_method: copy-from-controller
 
   roles:
-  - redhat-cop.jboss_common
-  - redhat-cop.jboss_fuse
+    - redhat-cop.jboss_common
+    - redhat-cop.jboss_fuse

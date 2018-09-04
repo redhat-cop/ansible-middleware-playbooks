@@ -1,3 +1,5 @@
+---
+
 - hosts: jboss_bxms_eap_centos_hosts
   become_user: "{{ ansible_centos_user }}"
   become: true
@@ -7,15 +9,15 @@
     transfer_method: csp-to-host
 
   vars_prompt:
-  - name: "rhn_username"
-    prompt: "Enter Your Red Hat Customer Portal Username"
-    private: no
+    - name: "rhn_username"
+      prompt: "Enter Your Red Hat Customer Portal Username"
+      private: no
 
-  - name: "rhn_password"
-    prompt: "Enter Your Red Hat Customer Portal Password"
-    private: yes
+    - name: "rhn_password"
+      prompt: "Enter Your Red Hat Customer Portal Password"
+      private: yes
 
   roles:
-  - redhat-cop.jboss_common
-  - redhat-cop.jboss_eap
-  - redhat-cop.jboss_bxms
+    - redhat-cop.jboss_common
+    - redhat-cop.jboss_eap
+    - redhat-cop.jboss_bxms

@@ -1,17 +1,19 @@
+---
+
 - hosts: jboss_fuse_centos_hosts
   become_user: "{{ ansible_centos_user }}"
   become: true
   gather_facts: true
 
   vars_prompt:
-  - name: "rhn_username"
-    prompt: "Enter Your Red Hat Customer Portal Username"
-    private: no
+    - name: "rhn_username"
+      prompt: "Enter Your Red Hat Customer Portal Username"
+      private: no
 
-  - name: "rhn_password"
-    prompt: "Enter Your Red Hat Customer Portal Password"
-    private: yes
+    - name: "rhn_password"
+      prompt: "Enter Your Red Hat Customer Portal Password"
+      private: yes
 
   roles:
-  - redhat-cop.jboss_common
-  - redhat-cop.jboss_fuse
+    - redhat-cop.jboss_common
+    - redhat-cop.jboss_fuse

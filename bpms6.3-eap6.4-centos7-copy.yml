@@ -1,3 +1,5 @@
+---
+
 - hosts: jboss_bxms_eap_centos_hosts
   become_user: "{{ ansible_rhel_user }}"
   become: true
@@ -7,6 +9,6 @@
     transfer_method: copy-from-controller
 
   roles:
-  - redhat-cop.jboss_common
-  - redhat-cop.jboss_eap
-  - redhat-cop.jboss_bxms
+    - redhat-cop.jboss_common
+    - redhat-cop.jboss_eap
+    - redhat-cop.jboss_bxms
