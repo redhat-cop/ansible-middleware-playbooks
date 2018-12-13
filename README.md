@@ -20,7 +20,7 @@ This repository provides a set of generic roles and reusable playbooks for deplo
 6. [JBoss Datagrid](https://github.com/redhat-cop/jboss_datagrid)
 
 ## Ansible Install and Version
-We are currently working against ansible 2.1.1.0. `pip` is the preferred installed method for now: `pip install ansible==2.1.1.0`
+We are currently working against ansible 2.5 `pip` is the preferred installed method for now: `pip install ansible==2.5`
 
 ## Transfer Methods
 
