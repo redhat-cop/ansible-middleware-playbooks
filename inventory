@@ -13,3 +13,5 @@
 [jboss_bxms_eap_centos_hosts]
 
 [jboss_datagrid_rhel_hosts]
+
+[redhat_sso_rhel_hosts]
