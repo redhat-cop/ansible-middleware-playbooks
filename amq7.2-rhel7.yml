@@ -1,16 +1,16 @@
 ---
 
-  - hosts: jboss_amq_rhel_hosts
-    become_user: "{{ ansible_rhel_user }}"
-    become: true
-    gather_facts: true
+- hosts: jboss_amq_rhel_hosts
+  become_user: "{{ ansible_rhel_user }}"
+  become: true
+  gather_facts: true
 
-# Set capabilities to install
-    vars:
-      role_install_broker: true
-      role_install_interconnect: false
+  # Set capabilities to install
+  vars:
+    role_install_broker: true
+    role_install_interconnect: false
 
-    vars_prompt:
+  vars_prompt:
     - name: "rhn_username"
       prompt: "Enter Your Red Hat Customer Portal Username"
       private: no
@@ -19,6 +19,6 @@
       prompt: "Enter Your Red Hat Customer Portal Password"
       private: yes
 
-    roles:
+  roles:
     - role: redhat-cop.jboss_common
     - role: redhat-cop.jboss_amq
