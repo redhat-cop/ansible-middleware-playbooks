@@ -1,0 +1,25 @@
+---
+
+language: python
+python:
+  - "2.7"
+# command to install dependencies
+install:
+  - pip install -U pip
+  - pip --version
+  - pip install ansible==2.4 ansible-lint yamllint flake8
+  - ansible-lint --version
+  - yamllint --version
+  - flake8 --version
+
+# command to run tests
+script:
+  - ansible-galaxy install -r requirements.yml -p ./roles
+  - |
+    for PLAYBOOK in *.yml
+    do
+    if [ "$PLAYBOOK" != "requirements.yml" ]; then
+    ansible-playbook $PLAYBOOK --syntax-check
+    fi
+    done
+  - yamllint -s -c tests/yamllint.yml $(find . -mindepth 1 -maxdepth 1 -name '*.yml')
