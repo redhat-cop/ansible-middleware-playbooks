@@ -5,7 +5,7 @@
   become: true
   become_user: "{{ ansible_rhel_user }}"
   become_method: sudo
-
+  
   # Set capabilities to install
   vars:
     # redhat-cop.jboss_common
@@ -13,8 +13,8 @@
     rhsm_disable_existing_repositories: False
     rhsm_enable_required_repositories: False
     # redhat-cop.jboss_amq
-    amq_version: 7.1.0
-    jboss_amq_artifact_source: https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=56531
+    amq_version: 7.6.0
+    jboss_amq_artifact_source: https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=79671
     role_install_broker: true
     role_install_interconnect: false
 
@@ -29,4 +29,17 @@
 
   roles:
     - role: redhat-cop.jboss_common
-    - role: redhat-cop.jboss_amq
+    # Two AMQ Brokers in Master/Slave topology with a shared storage
+    - {
+        role: redhat-cop.jboss_amq,
+        amq_broker_name: master,
+        amq_broker_shared_storage: True
+      }
+    - {
+        role: redhat-cop.jboss_amq,
+        amq_broker_name: slave,
+        amq_broker_shared_storage: True,
+        amq_broker_replicate: True,
+        amq_broker_ports_offset_enabled: True,
+        amq_broker_ports_offset: 100
+      }
