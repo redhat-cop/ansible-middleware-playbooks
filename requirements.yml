@@ -23,3 +23,6 @@
 
 - src: sabre1041.redhat-csp-download
   name: sabre1041.redhat-csp-download
+
+  collections:
+    - redhat.jcliff
