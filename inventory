@@ -1,6 +1,6 @@
 [jboss_eap_rhel_hosts]
 # Example Host
-#10.1.4.2 ansible_rhel_user=root ansible_user=cloud-user rh_poolid=<ID>
+10.0.155.203 ansible_rhel_user=root ansible_user=cloud-user rh_poolid=<ID>
 
 [jboss_eap_centos_hosts]
 
@@ -15,3 +15,5 @@
 [jboss_datagrid_rhel_hosts]
 
 [redhat_sso_rhel_hosts]
+
+[jcliff]
