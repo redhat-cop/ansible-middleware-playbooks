@@ -1,28 +1,30 @@
 ---
+roles:
+  - src: redhat-cop.jboss_eap
+    name: redhat-cop.jboss_eap
 
-- src: redhat-cop.jboss_eap
-  name: redhat-cop.jboss_eap
+  - src: redhat-cop.jboss-common
+    name: redhat-cop.jboss_common
 
-- src: redhat-cop.jboss-common
-  name: redhat-cop.jboss_common
+  - src: redhat-cop.jboss_bxms
+    name: redhat-cop.jboss_bxms
 
-- src: redhat-cop.jboss_bxms
-  name: redhat-cop.jboss_bxms
+  - src: redhat-cop.jboss_fuse
+    name: redhat-cop.jboss_fuse
 
-- src: redhat-cop.jboss_fuse
-  name: redhat-cop.jboss_fuse
+  - src: redhat-cop.jboss_amq
+    name: redhat-cop.jboss_amq
 
-- src: redhat-cop.jboss_amq
-  name: redhat-cop.jboss_amq
+  - src: redhat-cop.jboss_datagrid
+    name: redhat-cop.jboss_datagrid
 
-- src: redhat-cop.jboss_datagrid
-  name: redhat-cop.jboss_datagrid
+  - src: redhat-cop.redhat_sso
+    name: redhat-cop.redhat_sso
 
-- src: redhat-cop.redhat_sso
-  name: redhat-cop.redhat_sso
+  - src: sabre1041.redhat-csp-download
+    name: sabre1041.redhat-csp-download
 
-- src: sabre1041.redhat-csp-download
-  name: sabre1041.redhat-csp-download
-
-- src: redhat-cop.jcliff
-  name: redhat-cop.jcliff
+collections:
+  - name: redhat.jcliff
+    version: 0.0.1
+  
