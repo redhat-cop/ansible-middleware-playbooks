@@ -27,4 +27,3 @@ roles:
 collections:
   - name: redhat.jcliff
     version: 0.0.1
-  
