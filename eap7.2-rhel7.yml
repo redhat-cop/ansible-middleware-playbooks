@@ -14,6 +14,45 @@
       prompt: "Enter Your Red Hat Customer Portal Password"
       private: yes
 
+  vars:
+    app_url: http://people.redhat.com/~rpelisse/simple-webapp.war
+    app: /tmp/simple-webapp.war
+    ansible_distribution: RedHat
+    ansible_os_family: RedHat
+    ansible_pkg_mgr: yum
+    jboss_home: "{{ lookup('env','JBOSS_HOME') }}"
+
+  collections:
+    - redhat.jcliff
+
   roles:
     - redhat-cop.jboss_common
     - redhat-cop.jboss_eap
+    - jcliff
+
+  tasks:
+    - name: "Download a demo app to deploy"
+      get_url:
+        url: "{{ app_url }}"
+        dest: "{{ app }}"
+
+    - jcliff:
+        wfly_home: "{{ jboss_home }}"
+        timeout: 7000
+        subsystems:
+          - system_props:
+              - name: jcliff.enabled
+                value: 'enabled.plus'
+          - deployments:
+              - name: simple-webapp
+                path: /tmp/simple-webapp.war
+          - datasources:
+              - name: ExampleDS2
+                use_java_context: 'true'
+                jndi_name: java:jboss/datasources/ExampleDS2
+                connection_url: "jdbc:h2:mem:test2;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"
+                driver_name: h2
+
+    - name: "Restart Wildfly"
+      command: "{{ jboss_home }}/bin/jboss-cli.sh --connect --command=':reload'"
+      register: cli_result
