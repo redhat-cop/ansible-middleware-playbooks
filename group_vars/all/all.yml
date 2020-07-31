@@ -1,8 +1,8 @@
 ---
 # it may make sense to provide these at the host vars level
-ansible_centos_user: centos
+ansible_centos_user: rhel
 
-ansible_rhel_user: cloud-user
+ansible_rhel_user: root
 
 # Java 8 recommended
 # Full JDK (not just JRE) recommended. See https://access.redhat.com/solutions/18259
