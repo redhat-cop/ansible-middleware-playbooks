@@ -1,5 +1,4 @@
 [jboss_eap_rhel_hosts]
-# Example Host
 #10.1.4.2 ansible_rhel_user=root ansible_user=cloud-user rh_poolid=<ID>
 
 [jboss_eap_centos_hosts]

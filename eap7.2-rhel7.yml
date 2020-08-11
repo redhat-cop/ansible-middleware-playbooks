@@ -20,7 +20,7 @@
     ansible_distribution: RedHat
     ansible_os_family: RedHat
     ansible_pkg_mgr: yum
-    jboss_home: /opt/jboss-as/jboss-eap-7.1/
+    jboss_home: /opt/jboss-as/jboss-eap-7.2/
 
   collections:
     - wildfly.jcliff
