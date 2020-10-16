@@ -1,12 +1,20 @@
 ---
 
 - hosts: jboss_amq_rhel_hosts
-  become_user: "{{ ansible_rhel_user }}"
-  become: true
   gather_facts: true
+  become: true
+  become_user: "{{ ansible_rhel_user }}"
+  become_method: sudo
 
   # Set capabilities to install
   vars:
+    # redhat-cop.jboss_common
+    rhsm_subscribe_host: False
+    rhsm_disable_existing_repositories: False
+    rhsm_enable_required_repositories: False
+    # redhat-cop.jboss_amq
+    amq_version: 7.2.4
+    jboss_amq_artifact_source: https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=66191
     role_install_broker: true
     role_install_interconnect: false
 
