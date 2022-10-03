@@ -1,3 +1,7 @@
+# DEPRECATED - This repository is no longer maintained
+
+**Capabilities provided by this repository have migrated to the [ansible-middleware](https://github.com/ansible-middleware) project.**
+
 # ansible-middleware-playbooks [![Build Status](https://travis-ci.org/redhat-cop/ansible-middleware-playbooks.svg)](https://travis-ci.org/redhat-cop/ansible-middleware-playbooks)
 
 ## Purpose
